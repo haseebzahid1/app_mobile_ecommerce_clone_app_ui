@@ -5,7 +5,7 @@ class Recommends {
   Recommends({
     required this.title,
     required this.img,
-   required this.price,
+    required this.price,
   });
 }
 
