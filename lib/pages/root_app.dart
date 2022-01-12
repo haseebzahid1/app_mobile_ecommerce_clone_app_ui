@@ -3,7 +3,10 @@ import 'package:app_mobile_ecommerce_clone_app_ui/pages/store_page.dart';
 import 'package:app_mobile_ecommerce_clone_app_ui/theme_color.dart';
 import 'package:flutter/material.dart';
 
+import 'account_page.dart';
+import 'cart_page.dart';
 import 'home_page.dart';
+import 'more_page.dart';
 
 class RootApp extends StatefulWidget {
   const RootApp({Key? key}) : super(key: key);
@@ -31,13 +34,9 @@ class _RootAppState extends State<RootApp> {
       children: const [
         HomePage(),
         StorePage(),
-        Center(
-          child: Text("Account",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-        ),Center(
-          child: Text("Cart",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-        ),Center(
-          child: Text("More",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-        ),
+        AccountPage(),
+        CartPage(),
+        Morepage(),
       ],
     );
   }
