@@ -1,16 +1,16 @@
 class StoreList {
-  final String title;
+  final String name;
   final String img;
-  final int price;
+  final int currentIndex;
   StoreList({
-    required this.title,
+    required this.name,
     required this.img,
-    required this.price,
+    required this.currentIndex,
   });
 }
 
 List<StoreList> storeList = [
-  StoreList(title: "Châtelet - Les Halles, Paris",img: "assets/images/storeList 1.jpg",price: 1),
-  StoreList(title: "Champs-Élysées, Paris",img: "assets/images/storeList 2.jpg",price: 0),
-  StoreList(title: "Châtelet - Les Halles, Paris",img: "assets/images/storeList 3.jpg",price: 1),
+  StoreList(name: "Châtelet - Les Halles, Paris",img: "assets/images/storeList 1.jpg",currentIndex: 1),
+  StoreList(name: "Champs-Élysées, Paris",img: "assets/images/storeList 2.jpg",currentIndex: 0),
+  StoreList(name: "Châtelet - Les Halles, Paris",img: "assets/images/storeList 3.jpg",currentIndex: 1),
 ];

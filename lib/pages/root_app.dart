@@ -1,6 +1,9 @@
 import 'package:app_mobile_ecommerce_clone_app_ui/model/colors%20&%20size%20&%20itemsTab_modle.dart';
+import 'package:app_mobile_ecommerce_clone_app_ui/pages/store_page.dart';
 import 'package:app_mobile_ecommerce_clone_app_ui/theme_color.dart';
 import 'package:flutter/material.dart';
+
+import 'home_page.dart';
 
 class RootApp extends StatefulWidget {
   const RootApp({Key? key}) : super(key: key);
@@ -18,6 +21,24 @@ class _RootAppState extends State<RootApp> {
       backgroundColor: white,
       bottomNavigationBar: getFooter(),
       appBar: getAppBar(),
+      body: getBody(),
+    );
+  }
+
+  Widget getBody(){
+    return IndexedStack(
+      index: activeTab,
+      children: const [
+        HomePage(),
+        StorePage(),
+        Center(
+          child: Text("Account",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+        ),Center(
+          child: Text("Cart",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+        ),Center(
+          child: Text("More",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+        ),
+      ],
     );
   }
 
@@ -32,6 +53,7 @@ class _RootAppState extends State<RootApp> {
       case 2:
         return AppBar(
           elevation: 0.8,
+          centerTitle: true,
           backgroundColor: white,
           title: const Text("ACCOUNT", style: TextStyle(color: black),
           ),
@@ -40,6 +62,7 @@ class _RootAppState extends State<RootApp> {
       case 3:
         return AppBar(
           elevation: 0.8,
+          centerTitle: true,
           backgroundColor: white,
           title: const Text(
             "CART", style: TextStyle(color: black),
@@ -49,6 +72,7 @@ class _RootAppState extends State<RootApp> {
       case 4:
         return AppBar(
           elevation: 0.8,
+          centerTitle: true,
           backgroundColor: white,
           title: const Text("MORE", style: TextStyle(color: black),
           ),
@@ -58,7 +82,7 @@ class _RootAppState extends State<RootApp> {
     }
   }
 
-  Widget getFooter(){
+  Container getFooter(){
     return Container(
       height: 80,
       decoration: BoxDecoration(
